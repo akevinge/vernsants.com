@@ -1,1 +1,1 @@
-## A Boilerplate for Next.js and Typescript
+## Vern's Ant Shop
