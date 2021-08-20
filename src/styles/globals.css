@@ -1,3 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("./utilities.css");
+
+:root {
+  --color-primary: #0d0d0d;
+  --color-secondary: #ffffff;
+}
+
 html,
 body {
   padding: 0;
