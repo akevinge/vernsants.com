@@ -1,18 +1,49 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import Link from "next/link";
+import { MenuIcon } from "icons/MenuIcon";
 
 export const Navbar: FC = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const switchMobileOpen = () => setMobileOpen((s) => !s);
+
   return (
     <div
-      className="w-screen bg-black bg-opacity-30 fixed top-0 left-0 grid items-center justify-items-start"
-      style={{ height: "85px", gridTemplateColumns: "4fr 5fr" }}
+      className="w-screen h-20 bg-black bg-opacity-30 fixed top-0 left-0 grid items-center justify-items-start"
+      style={{ gridTemplateColumns: "4fr 5fr" }}
     >
       <Link href="/">
         <a className="text-secondary font-primary font-medium text-base ml-10 whitespace-nowrap">
           Vern's Ant Shop
         </a>
       </Link>
-      <div className="flex flex-col items-center self-end mb-6">
+      {/* small nav */}
+      <div
+        className="block sm:hidden justify-self-end mr-10"
+        onClick={switchMobileOpen}
+      >
+        <MenuIcon customTwClass="filter invert hover:invert-3/4 cursor-pointer" />
+      </div>
+      <div
+        className="block sm:hidden fixed top-20 w-screen bg-black bg-opacity-30 transition-all duration-500 border-t-2 border-white"
+        style={{
+          transform: mobileOpen ? "translateX(0)" : "translateX(100vw)",
+        }}
+      >
+        <div className="flex gap-16 p-5 justify-center items-center">
+          <Link href="/">
+            <a className="text-secondary font-primary font-medium text-base whitespace-nowrap">
+              Home
+            </a>
+          </Link>
+          <Link href="/shop">
+            <a className="text-secondary font-primary font-medium text-base whitespace-nowrap">
+              Shop
+            </a>
+          </Link>
+        </div>
+      </div>
+      {/* large nav */}
+      <div className="hidden sm:flex flex-col items-center self-end mb-6">
         <div className="flex gap-16">
           <Link href="/">
             <a className="text-secondary font-primary font-medium text-base whitespace-nowrap">

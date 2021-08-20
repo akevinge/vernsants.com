@@ -10,13 +10,18 @@ module.exports = {
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
       },
-      backgroundImage: (theme) => ({
+      backgroundImage: {
         "hero-bg": "url('/images/hero-bg.png')",
-      }),
+      },
+      invert: {
+        "3/4": ".75",
+      },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      invert: ["hover"],
+    },
   },
   plugins: [],
 };

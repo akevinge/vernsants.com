@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-export const FancyChevron: FC = () => {
+export const FancyChevronIcon: IconComponent = ({ customTwClass = "" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,6 +6,7 @@ export const FancyChevron: FC = () => {
       height="34"
       fill="none"
       viewBox="0 0 60 34"
+      className={customTwClass}
     >
       <path
         fill="#fff"
