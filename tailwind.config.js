@@ -16,6 +16,10 @@ module.exports = {
       invert: {
         "3/4": ".75",
       },
+      width: {
+        108: "26rem",
+        "screen-3/4": "75vw",
+      },
     },
   },
   variants: {
