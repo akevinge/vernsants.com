@@ -8,7 +8,7 @@ export const Navbar: FC = () => {
 
   return (
     <div
-      className="w-screen h-20 bg-black bg-opacity-30 fixed top-0 left-0 grid items-center justify-items-start"
+      className="w-screen h-20 bg-black bg-opacity-30 fixed top-0 left-0 grid items-center justify-items-start z-50"
       style={{ gridTemplateColumns: "4fr 5fr" }}
     >
       <Link href="/">

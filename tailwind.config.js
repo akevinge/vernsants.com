@@ -5,6 +5,14 @@ module.exports = {
     fontFamily: {
       primary: "var(--font-family-primary)",
     },
+    screens: {
+      xs: "300px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
         primary: "var(--color-primary)",
@@ -19,6 +27,10 @@ module.exports = {
       width: {
         108: "26rem",
         "screen-3/4": "75vw",
+        "screen-5/6": "83vw",
+      },
+      height: {
+        112: "28rem",
       },
     },
   },
