@@ -1,8 +1,25 @@
 module.exports = {
-  purge: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-  ],
+  purge: {
+    content: [
+      "./src/pages/**/*.{js,ts,jsx,tsx}",
+      "./src/components/**/*.{js,ts,jsx,tsx}",
+    ],
+    safelist: [
+      "h-6 w-6",
+      "transform",
+      "rotate-180",
+      "-mt-16",
+      "md:mt-0",
+      "w-52",
+      "h-12",
+      "filter",
+      "invert",
+      "hover:invert-3/4",
+      "cursor-pointer",
+      "ml-auto",
+      "mr-3",
+    ],
+  },
   darkMode: false,
   theme: {
     fontFamily: {
