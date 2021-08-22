@@ -26,7 +26,7 @@ export const SearchAutoComplete: FC = () => {
       <ul className="list-none absolute w-full h-auto top-full transition-all">
         {displayAc &&
           placeholderResults.map((x) => (
-            <li className="w-full h-10 bg-gray-50 flex items-center">
+            <li key={x} className="w-full h-10 bg-gray-50 flex items-center">
               <span className="ml-2">{x}</span>
             </li>
           ))}

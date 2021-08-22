@@ -29,7 +29,7 @@ export const Footer: FC = () => {
       </div>
       <div className="w-3/4 mx-auto flex flex-col md:grid md:grid-cols-2 gap-28">
         <h1 className="text-secondary font-medium text-5xl">
-          Check <span className="text-highlight">Vern's</span> Socials
+          Check <span className="text-highlight">Vern&apos;s</span> Socials
         </h1>
         <ul className="list-none flex flex-col gap-20">
           <li>

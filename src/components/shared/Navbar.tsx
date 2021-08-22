@@ -15,7 +15,7 @@ export const Navbar: FC = () => {
     >
       <Link href="/">
         <a className="text-secondary font-primary font-medium text-base ml-10 whitespace-nowrap">
-          Vern's Ant Shop
+          Vern&apos;s Ant Shop
         </a>
       </Link>
       {/* small nav */}

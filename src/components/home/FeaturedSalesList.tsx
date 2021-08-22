@@ -15,7 +15,8 @@ export const FeaturedSalesList: FC = () => {
         style={{ height: "100%" }}
       >
         <h1 className="text-secondary font-medium text-3xl xl:text-4xl text-center">
-          Check out <span className="text-highlight">Vern's</span> hotest sales
+          Check out <span className="text-highlight">Vern&apos;s</span> hotest
+          sales
         </h1>
         <div className="relative" style={{ height: "80%" }}>
           <Swiper
@@ -54,8 +55,8 @@ export const FeaturedSalesList: FC = () => {
               swiper.autoplay?.start();
             }}
           >
-            {x.map(() => (
-              <SwiperSlide>
+            {x.map((x) => (
+              <SwiperSlide key={x}>
                 <div
                   className="w-50 max-h-full grid overflow-hidden gap-1"
                   style={{ gridTemplateRows: "75% 25%" }}

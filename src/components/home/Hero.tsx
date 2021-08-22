@@ -13,8 +13,8 @@ export const Hero: FC = () => {
         className="flex flex-col gap-16 items-center"
       >
         <h1 className="text-secondary text-3xl lg:text-4xl xl:text-6xl font-medium text-center">
-          Shop <span className="text-highlight">Vern's</span> Unique Collection
-          of Ants
+          Shop <span className="text-highlight">Vern&apos;s</span> Unique
+          Collection of Ants
         </h1>
         <div className="w-3/4 sm:w-96 h-14">
           <SearchAutoComplete />
@@ -30,7 +30,7 @@ export const Hero: FC = () => {
           customDim="w-60 sm:w-80 sm:w-96 h-12"
         >
           <h1 className="text-secondary font-medium text-sm  sm:text-lg whitespace-nowrap">
-            Check out <span className="text-highlight">Vern's</span> Hotest
+            Check out <span className="text-highlight">Vern&apos;s</span> Hotest
             Sales
           </h1>
         </Button>
