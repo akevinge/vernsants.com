@@ -1,15 +1,15 @@
 import { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Autoplay } from "swiper/core";
+import SwiperCore, { Navigation, Autoplay, Lazy } from "swiper/core";
 import "swiper/components/pagination/pagination.min.css";
 import { ChevronRight } from "icons/ChevronRight";
 
-SwiperCore.use([Navigation, Autoplay]);
+SwiperCore.use([Navigation, Autoplay, Lazy]);
 
 export const FeaturedSalesList: FC = () => {
   const x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
-    <article className="w-full h-112 bg-black bg-opacity-50 rounded-t-xl">
+    <article className="w-full h-116 sm:h-112 bg-black bg-opacity-50 rounded-t-xl">
       <div
         className="relative px-10 pt-6 w-full flex flex-col gap-8"
         style={{ height: "90%" }}
@@ -24,6 +24,7 @@ export const FeaturedSalesList: FC = () => {
           spaceBetween={50}
           slidesPerView={4}
           speed={500}
+          lazy={{ loadPrevNext: true }}
           autoplay={{
             delay: 3200,
             pauseOnMouseEnter: true,

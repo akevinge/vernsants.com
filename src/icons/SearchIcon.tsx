@@ -1,4 +1,4 @@
-export const SearchIcon: IconComponent = ({ customTwClass }) => {
+export const SearchIcon: IconComponent = ({ customTwClass = "", style }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +6,7 @@ export const SearchIcon: IconComponent = ({ customTwClass }) => {
       viewBox="0 0 24 24"
       stroke="currentColor"
       className={`${customTwClass} h-6 w-6`}
+      style={style}
     >
       <path
         strokeLinecap="round"

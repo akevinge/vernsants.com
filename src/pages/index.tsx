@@ -21,7 +21,7 @@ const HomePage: NextPage = () => {
           </a>
         </Link>
       </div>
-      <div className="absolute transform top-1/2 -translate-y-2/3 left-1/2 md:left-28 -translate-x-1/2 md:translate-x-0 ">
+      <div className="absolute transform top-1/2 -translate-y-2/3 left-1/2 md:left-28 -translate-x-1/2 md:translate-x-0 xl:left-56">
         <CtaCard />
       </div>
       <section className="w-full">
@@ -30,7 +30,12 @@ const HomePage: NextPage = () => {
           <FeaturedSalesList />
         </div>
       </section>
-      <WhySection />
+      <section
+        className="w-screen"
+        style={{ minHeight: "500px", height: "75vh", marginTop: "28vh" }}
+      >
+        <WhySection />
+      </section>
     </div>
   );
 };

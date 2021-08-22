@@ -1,4 +1,7 @@
-export const FancyChevronIcon: IconComponent = ({ customTwClass = "" }) => {
+export const FancyChevronIcon: IconComponent = ({
+  customTwClass = "",
+  style,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -7,6 +10,7 @@ export const FancyChevronIcon: IconComponent = ({ customTwClass = "" }) => {
       fill="none"
       viewBox="0 0 60 34"
       className={customTwClass}
+      style={style}
     >
       <path
         fill="#fff"
