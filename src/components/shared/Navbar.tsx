@@ -2,6 +2,8 @@ import { FC, useState } from "react";
 import Link from "next/link";
 import { MenuIcon } from "icons/MenuIcon";
 
+export const NavbarPlaceholder = () => <div className="w-screen h-20"></div>;
+
 export const Navbar: FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const switchMobileOpen = () => setMobileOpen((s) => !s);

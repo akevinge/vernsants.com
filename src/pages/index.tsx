@@ -1,41 +1,28 @@
-import { CtaCard } from "@components/home/CtaCard";
 import { FeaturedSalesList } from "@components/home/FeaturedSalesList";
-import { Navbar } from "@components/shared/Navbar";
+import { Navbar, NavbarPlaceholder } from "@components/shared/Navbar";
 import { NextPage } from "next";
-import { FancyChevronIcon } from "../icons/FancyChevronIcon";
-import Link from "next/link";
 import { WhySection } from "@components/home/WhySection";
+import { Footer } from "@components/shared/Footer";
+import { Hero } from "@components/home/Hero";
 
 const HomePage: NextPage = () => {
   return (
     <div className="page-container bg-primary">
       <Navbar />
-      <div
-        className="bg-hero-bg max-w-screen bg-cover bg-center"
-        style={{ height: "108vh" }}
-      ></div>
-      <div className="absolute bottom-6 sm:bottom-10 left-1/2 transform translate-x-1/2 animate-bounce cursor-pointer">
-        <Link href="#featured-sales">
-          <a>
-            <FancyChevronIcon />
-          </a>
-        </Link>
-      </div>
-      <div className="absolute transform top-1/2 -translate-y-2/3 left-1/2 md:left-28 -translate-x-1/2 md:translate-x-0 xl:left-56">
-        <CtaCard />
-      </div>
-      <section className="w-full">
+      <NavbarPlaceholder />
+      <Hero />
+      <section className="w-full" style={{ marginTop: "35vh" }}>
         <div className="w-3/4 h-auto mx-auto -mt-10 relative">
           <div id="featured-sales" className="absolute -top-60"></div>
           <FeaturedSalesList />
         </div>
       </section>
-      <section
-        className="w-screen"
-        style={{ minHeight: "500px", height: "75vh", marginTop: "28vh" }}
-      >
+      <section className="w-screen" style={{ marginTop: "35vh" }}>
         <WhySection />
       </section>
+      <div style={{ marginTop: "35vh" }}>
+        <Footer />
+      </div>
     </div>
   );
 };

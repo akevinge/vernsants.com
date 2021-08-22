@@ -7,6 +7,8 @@
 :root {
   --color-primary: #0d0d0d;
   --color-secondary: #ffffff;
+  --color-highlight: #0fe899;
+  --color-highlight-dark: #2eba87;
   --font-family-primary: -apple-system, BlinkMacSystemFont, Geometria, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;

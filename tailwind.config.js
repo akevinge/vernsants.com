@@ -17,6 +17,8 @@ module.exports = {
       colors: {
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
+        highlight: "var(--color-highlight)",
+        "highlight-dark": "var(--color-highlight-dark)",
       },
       backgroundImage: {
         "hero-bg": "url('/images/hero-bg.png')",

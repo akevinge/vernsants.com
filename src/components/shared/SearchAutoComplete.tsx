@@ -7,7 +7,7 @@ export const SearchAutoComplete: FC = () => {
   const [query, setQuery] = useState("");
 
   return (
-    <div className="h-10 bg-gray-50 flex items-center relative">
+    <div className="h-full bg-gray-50 flex items-center relative">
       <input
         type="text"
         className="w-full outline-none ml-3 text-sm placeholder-gray-600"
