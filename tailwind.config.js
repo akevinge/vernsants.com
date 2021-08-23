@@ -5,7 +5,8 @@ module.exports = {
       "./src/components/**/*.{js,ts,jsx,tsx}",
     ],
     safelist: [
-      "h-6 w-6",
+      "h-6",
+      "w-6",
       "transform",
       "rotate-180",
       "-mt-16",
