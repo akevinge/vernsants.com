@@ -56,6 +56,10 @@ module.exports = {
         112: "28rem",
         116: "32rem",
       },
+      margin: {
+        "screen-10vh": "10vh",
+        "screen-15vh": "15vh",
+      },
     },
   },
   variants: {

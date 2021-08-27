@@ -8,10 +8,7 @@ export const Hero: FC = () => {
       className="w-screen h-screen relative grid grid-rows-2"
       style={{ height: "calc(100vh - 5rem)", minHeight: "500px" }}
     >
-      <div
-        style={{ marginTop: "15vh" }}
-        className="flex flex-col gap-5 sm:gap-16 items-center"
-      >
+      <div className="flex flex-col gap-10 sm:gap-16 items-center mt-screen-10vh sm:mt-screen-15vh">
         <h1 className="text-secondary text-3xl lg:text-4xl xl:text-6xl font-medium text-center">
           Shop <span className="text-highlight">Vern&apos;s</span> Unique
           Collection of Ants
