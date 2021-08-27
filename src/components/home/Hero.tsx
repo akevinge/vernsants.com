@@ -1,5 +1,5 @@
 import { Button } from "@components/shared/Button";
-import { SearchAutoComplete } from "@components/shared/SearchAutoComplete";
+import { SpeciesList } from "@components/shared/SpeciesList";
 import { FC } from "react";
 
 export const Hero: FC = () => {
@@ -10,17 +10,17 @@ export const Hero: FC = () => {
     >
       <div
         style={{ marginTop: "15vh" }}
-        className="flex flex-col gap-16 items-center"
+        className="flex flex-col gap-5 sm:gap-16 items-center"
       >
         <h1 className="text-secondary text-3xl lg:text-4xl xl:text-6xl font-medium text-center">
           Shop <span className="text-highlight">Vern&apos;s</span> Unique
           Collection of Ants
         </h1>
-        <div className="w-3/4 sm:w-96 h-14">
-          <SearchAutoComplete />
+        <div className="w-3/4 md:w-1/2 mx-auto">
+          <SpeciesList />
         </div>
       </div>
-      <div className="flex flex-col gap-8 items-center self-end mb-28">
+      <div className="flex flex-col gap-8 items-center self-end mb-12 sm:mb-28">
         <Button bgColor="highlight" link="/shop" customDim="w-32 sm:w-52 h-12">
           <h1 className="text-primary font-medium text-lg">Shop Now</h1>
         </Button>
