@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FC } from "react";
 
-export const Footer: FC = () => {
+export const Contact: FC = () => {
   return (
     <footer className="w-screen bg-primary pb-32 flex flex-col gap-40">
       <div className="w-3/4 mx-auto flex flex-col md:grid md:grid-cols-2 gap-28">

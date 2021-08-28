@@ -2,7 +2,7 @@ import { FeaturedSalesList } from "@components/home/FeaturedSalesList";
 import { Navbar, NavbarPlaceholder } from "@components/shared/Navbar";
 import { NextPage } from "next";
 import { WhySection } from "@components/home/WhySection";
-import { Footer } from "@components/shared/Footer";
+import { Contact } from "@components/home/Contact";
 import { Hero } from "@components/home/Hero";
 
 const HomePage: NextPage = () => {
@@ -21,7 +21,7 @@ const HomePage: NextPage = () => {
         <WhySection />
       </section>
       <div style={{ marginTop: "35vh" }}>
-        <Footer />
+        <Contact />
       </div>
     </div>
   );
