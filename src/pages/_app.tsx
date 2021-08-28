@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="Ant,Colonies,Colony,Ants,Myrmecocystus,Pogonomyrmex,Desert,Vern,Shop,Cheap,Price,Workers,Worker,Queen"
         />
         <meta name="robots" content="index, follow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
         <meta name="revisit-after" content="1 days" />
       </Head>

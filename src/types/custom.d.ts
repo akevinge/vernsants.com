@@ -4,3 +4,9 @@ type IconProps = {
 };
 
 type IconComponent = import("react").FC<IconProps>;
+
+enum Routes {
+  home = "/",
+  shop = "/shop",
+  shippingAndDoa = "/shipping-and-doa",
+}

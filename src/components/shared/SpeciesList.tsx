@@ -1,7 +1,7 @@
 import { FC, Fragment } from "react";
 import { listings } from "lib/listings";
 import Link from "next/link";
-import { Routes } from "types/routes";
+import { Routes } from "../../types/routes";
 
 export const SpeciesList: FC = () => {
   return (

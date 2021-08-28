@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import Link from "next/link";
 import { MenuIcon } from "icons/MenuIcon";
 import { useRouter } from "next/dist/client/router";
-import { Routes } from "types/routes";
+import { Routes } from "../../types/routes";
 
 export const NavbarPlaceholder = () => <div className="w-screen h-20"></div>;
 
@@ -27,7 +27,7 @@ export const Navbar: FC = () => {
 
   return (
     <div
-      className="w-screen h-20 bg-black bg-opacity-30 fixed top-0 left-0 grid items-center justify-items-start z-50"
+      className="w-screen h-20 bg-primary fixed top-0 left-0 grid items-center justify-items-start z-50"
       style={{ gridTemplateColumns: "4fr 5fr" }}
     >
       <Link href={Routes.home}>
