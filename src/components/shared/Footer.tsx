@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const Footer: FC = () => {
   return (
-    <footer className="flex flex-col sm:flex-row gap-20 items-center justify-center">
+    <footer className="flex flex-col sm:flex-row gap-20 items-center justify-center pb-20">
       <div className="flex flex-col gap-8">
         <h1 className="text-secondary font-medium text-2xl">
           Contact <span className="text-highlight">Vern</span>
