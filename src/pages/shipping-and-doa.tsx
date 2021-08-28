@@ -17,7 +17,10 @@ const ShippingAndDoa: NextPage = () => {
             <span className="text-highlight">2-Day Priority: </span>+$10
           </span>
           <span className="text-secondary font-medium">
-            <span className="text-highlight">Extra Cooling Packs: </span>+$5
+            <span className="text-highlight">Cooling Packs: </span>+$5
+          </span>
+          <span className="text-secondary font-medium">
+            <span className="text-highlight">Insulated Boxes: </span>+$15
           </span>
           <span className="text-secondary font-medium">
             <span className="text-highlight">

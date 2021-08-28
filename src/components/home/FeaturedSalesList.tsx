@@ -19,7 +19,7 @@ export const FeaturedSalesList: FC = () => {
         style={{ height: "100%" }}
       >
         <h1 className="text-secondary font-medium text-3xl xl:text-4xl text-center">
-          Check out <span className="text-highlight">Vern&apos;s</span> hotest
+          Check out <span className="text-highlight">Vern&apos;s</span> hottest
           sales
         </h1>
         {displaySlider ? (

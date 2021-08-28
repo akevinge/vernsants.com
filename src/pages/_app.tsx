@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Vern&apos;s Ant Shop</title>
         <meta
           name="description"
-          content="Shop Vern's Unique Collection of Ants. Check out /shop"
+          content="Shop Vern's Unique Collection of Ants. Check out the shop page at  www.vernsants.com/shop"
         />
         <meta
           name="keywords"
