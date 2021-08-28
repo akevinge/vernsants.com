@@ -1,7 +1,7 @@
 import { Button } from "@components/shared/Button";
 import { SpeciesList } from "@components/shared/SpeciesList";
 import { FC } from "react";
-import { Routes } from "../../types/routes";
+import { Routes } from "../../types/Routes";
 
 export const Hero: FC = () => {
   return (

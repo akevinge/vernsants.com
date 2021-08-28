@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import Link from "next/link";
 import { MenuIcon } from "icons/MenuIcon";
 import { useRouter } from "next/dist/client/router";
-import { Routes } from "../../types/routes";
+import { Routes } from "../../types/Routes";
 
 export const NavbarPlaceholder = () => <div className="w-screen h-20"></div>;
 

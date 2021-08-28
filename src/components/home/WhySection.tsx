@@ -1,6 +1,6 @@
 import { Button } from "@components/shared/Button";
 import { FC } from "react";
-import { Routes } from "../../types/routes";
+import { Routes } from "../../types/Routes";
 
 export const WhySection: FC = () => {
   return (
