@@ -44,8 +44,11 @@ export const ShopListings: FC = () => {
   return (
     <div className="w-full">
       <ul className="list-none flex gap-10 flex-wrap justify-center px-20">
-        {placeholderData.map(({ imgUrl, species, genus }) => (
-          <li className="flex flex-col gap-3">
+        {placeholderData.map(({ imgUrl, species, genus }, i) => (
+          <li
+            key={species + genus + imgUrl + i.toString()}
+            className="flex flex-col gap-3"
+          >
             <div className="w-44 rounded-sm overflow-hidden">
               <img className="w-full" src={imgUrl} alt="" />
             </div>
