@@ -1,5 +1,6 @@
 import { Button } from "@components/shared/Button";
 import { FC } from "react";
+import { Routes } from "types/routes";
 
 export const WhySection: FC = () => {
   return (
@@ -30,7 +31,11 @@ export const WhySection: FC = () => {
           </li>
         </ul>
         <div></div>
-        <Button bgColor="secondary" customTwClass="-mt-16 md:mt-0" link="/shop">
+        <Button
+          bgColor="secondary"
+          customTwClass="-mt-16 md:mt-0"
+          link={Routes.shop}
+        >
           <h1 className="text-primary font-medium text-lg">Shop Now</h1>
         </Button>
       </div>

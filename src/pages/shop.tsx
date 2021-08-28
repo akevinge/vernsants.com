@@ -1,5 +1,5 @@
 import { Navbar, NavbarPlaceholder } from "@components/shared/Navbar";
-import { ShopFooter } from "@components/shop/ShopFooter";
+import { Footer } from "@components/shared/Footer";
 import { ShopListings } from "@components/shop/ShopListings";
 import { NextPage } from "next";
 
@@ -10,11 +10,11 @@ const ShopPage: NextPage = () => {
       <NavbarPlaceholder />
       <div
         className="w-screen"
-        style={{ minHeight: "300px", marginBottom: "10vh", marginTop: "10vh" }}
+        style={{ minHeight: "300px", marginBottom: "13vh", marginTop: "12vh" }}
       >
         <ShopListings />
       </div>
-      <ShopFooter />
+      <Footer />
     </div>
   );
 };

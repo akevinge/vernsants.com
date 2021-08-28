@@ -1,29 +1,25 @@
-import { FC } from "react";
+import { FC, Fragment } from "react";
+import { listings } from "lib/listings";
+import Link from "next/link";
+import { Routes } from "types/routes";
 
 export const SpeciesList: FC = () => {
-  const placeholderResults = [
-    "Pogonomyrmex rugosus",
-    "Pogonomyrmex rugosus",
-    "Pogonomyrmex rugosus",
-    "Pogonomyrmex rugosus",
-    "Pogonomyrmex rugosus",
-    "Pogonomyrmex rugosus",
-  ];
-
   return (
     <div className="w-full h-full">
       <ul className="list-none w-full h-auto transition-all flex flex-row gap-2 flex-wrap justify-center">
-        {placeholderResults.map((x, i) => (
-          <>
-            <li key={x} className="flex items-center">
-              <span className="ml-2 text-secondary font-bold whitespace-nowrap text-xs sm:text-base">
-                {x}
-              </span>
+        {listings.map(({ genus, species }, i) => (
+          <Fragment key={i}>
+            <li className="flex items-center cursor-pointer">
+              <Link href={`${Routes.shop}#${genus + "-" + species}`}>
+                <span className="ml-2 text-secondary font-bold whitespace-nowrap text-xs sm:text-base">
+                  {`${genus} ${species}`}
+                </span>
+              </Link>
             </li>
-            <li key={x + i.toString()} className="flex items-center">
+            <li className="flex items-center">
               <div className="bg-highlight w-1 h-1 rounded-full"></div>
             </li>
-          </>
+          </Fragment>
         ))}
       </ul>
     </div>

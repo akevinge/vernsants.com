@@ -1,9 +1,9 @@
 import { FC } from "react";
 import Link from "next/link";
 
-export const ShopFooter: FC = () => {
+export const Footer: FC = () => {
   return (
-    <footer className="w-1/2 mx-auto flex flex-col sm:flex-row gap-20 items-center justify-center">
+    <footer className="flex flex-col sm:flex-row gap-20 items-center justify-center">
       <div className="flex flex-col gap-8">
         <h1 className="text-secondary font-medium text-2xl">
           Contact <span className="text-highlight">Vern</span>
@@ -29,7 +29,7 @@ export const ShopFooter: FC = () => {
       </div>
       <div className="flex flex-col gap-8">
         <h1 className="text-secondary font-medium text-2xl whitespace-nowrap">
-          Check <span className="text-highlight">Vern&apos;s</span> Socials
+          Follow <span className="text-highlight">Vern&apos;s</span> Socials
         </h1>
         <ul className="list-none flex flex-col gap-8">
           <li>
