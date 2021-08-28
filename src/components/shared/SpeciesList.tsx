@@ -20,7 +20,7 @@ export const SpeciesList: FC = () => {
                 {x}
               </span>
             </li>
-            <li key={x} className="flex items-center">
+            <li key={x + i.toString()} className="flex items-center">
               <div className="bg-highlight w-1 h-1 rounded-full"></div>
             </li>
           </>
