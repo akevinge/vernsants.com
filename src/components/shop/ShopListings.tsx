@@ -3,8 +3,8 @@ import { listings } from "lib/listings";
 
 export const ShopListings: FC = () => {
   return (
-    <div className="w-full">
-      <ul className="list-none flex gap-10 flex-wrap justify-center px-20">
+    <div className="w-3/4 mx-auto flex justify-center">
+      <ul className="list-none flex gap-10 flex-wrap justify-start px-20">
         {listings
           .sort((a, b) =>
             a.inStock && b.inStock ? 1 : a.inStock && !b.inStock ? -1 : 0
