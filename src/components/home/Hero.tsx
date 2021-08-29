@@ -31,9 +31,9 @@ export const Hero: FC = () => {
           link="#featured-sales"
           customDim="w-60 sm:w-80 sm:w-96 h-12"
         >
-          <h1 className="text-secondary font-medium text-sm  sm:text-lg whitespace-nowrap">
-            Check out <span className="text-highlight">Vern&apos;s</span>{" "}
-            Hottest Sales
+          <h1 className="text-highlight font-medium text-sm  sm:text-lg whitespace-nowrap">
+            Check out <span className="text-primary">Vern&apos;s</span> Hottest
+            Sales
           </h1>
         </Button>
       </div>

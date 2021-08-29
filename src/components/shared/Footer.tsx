@@ -1,5 +1,9 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import Link from "next/link";
+import { YoutubeIcon } from "icons/YoutubeIcon";
+import { InstagramIcon } from "icons/InstagramIcon";
+import { DiscordIcon } from "icons/DiscordIcon";
+import { MailIcon } from "icons/MailIcon";
 
 export const Footer: FC = () => {
   return (
@@ -12,7 +16,8 @@ export const Footer: FC = () => {
           <li>
             <Link href="mailto:Vern4130@icloud.com?subject=Interested in Buying&body=Hey Vern,%0D">
               <a className="flex items-center gap-6" rel="noopener noreferrer">
-                <img className="w-10" src="/icons/mail.svg" alt="" />
+                <MailIcon style={{ width: "2.5rem" }} />
+
                 <h1 className="text-highlight text-sm font-bold whitespace-normal xl:whitespace-nowrap">
                   Vern4130@icloud.com
                 </h1>
@@ -20,7 +25,7 @@ export const Footer: FC = () => {
             </Link>
           </li>
           <li className="flex items-center gap-6">
-            <img className="w-10" src="/icons/discord.svg" alt="" />
+            <DiscordIcon style={{ width: "2.5rem" }} />
             <h1 className="text-highlight text-sm font-bold whitespace-normal xl:whitespace-nowrap">
               VERN530#5621
             </h1>
@@ -35,7 +40,8 @@ export const Footer: FC = () => {
           <li>
             <Link href="https://www.instagram.com/myrmidonnationants">
               <a className="flex items-center gap-6" target="_blank">
-                <img className="w-10" src="/icons/instagram.svg" alt="" />
+                <InstagramIcon style={{ width: "2.2rem" }} />
+
                 <h1 className="text-highlight text-sm font-bold whitespace-normal xl:whitespace-nowrap">
                   myrmidonnationants
                 </h1>
@@ -45,7 +51,7 @@ export const Footer: FC = () => {
           <li className="flex items-center gap-6">
             <Link href="https://www.youtube.com/channel/UCVJAjp5K0_lPi4LZXGJFKPQ">
               <a className="flex items-center gap-6" target="_blank">
-                <img className="w-10" src="/icons/youtube.svg" alt="" />
+                <YoutubeIcon style={{ width: "2.5rem" }} />
 
                 <h1 className="text-highlight text-sm font-bold whitespace-normal xl:whitespace-nowrap">
                   Myrmidon Nation

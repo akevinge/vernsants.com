@@ -1,4 +1,8 @@
-export const MenuIcon: IconComponent = ({ customTwClass = "", style }) => {
+export const MenuIcon: IconComponent = ({
+  customTwClass = "",
+  style,
+  ...props
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -7,6 +11,7 @@ export const MenuIcon: IconComponent = ({ customTwClass = "", style }) => {
       stroke="currentColor"
       className={`${customTwClass} h-6 w-6`}
       style={style}
+      {...props}
     >
       <path
         strokeLinecap="round"

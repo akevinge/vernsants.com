@@ -1,4 +1,8 @@
-export const ChevronRight: IconComponent = ({ customTwClass = "", style }) => {
+export const ChevronRight: IconComponent = ({
+  customTwClass = "",
+  style,
+  ...props
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +10,7 @@ export const ChevronRight: IconComponent = ({ customTwClass = "", style }) => {
       viewBox="0 0 20 20"
       fill="currentColor"
       style={style}
+      {...props}
     >
       <path
         fillRule="evenodd"

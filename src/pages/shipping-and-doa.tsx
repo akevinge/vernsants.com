@@ -39,7 +39,7 @@ const ShippingAndDoa: NextPage = () => {
         <div className="mt-8">
           <span className="text-secondary font-medium">
             Your colony will have{" "}
-            <u className="font-bold">
+            <u className="font-bold text-highlight">
               guarenteed live arrival if overnight shipping
             </u>{" "}
             is paid for.

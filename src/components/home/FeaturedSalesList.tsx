@@ -81,29 +81,32 @@ export const FeaturedSalesList: FC = () => {
                     <SwiperSlide key={species + i}>
                       <div
                         className="w-64 max-h-full grid overflow-hidden gap-3"
-                        style={{ gridTemplateRows: "70% 35%" }}
+                        style={{
+                          gridTemplateRows: "70% 35%",
+                          height: "475px",
+                        }}
                       >
-                        <div className="w-52 h-72 flex justify-center items-center bg-primary-light">
+                        <div className="w-72 h-72 flex justify-center items-center bg-primary-light">
                           <img className="w-full" src={imgUrl} alt="" />
                         </div>
                         <div className="">
-                          <h1 className="text-highlight font-medium whitespace-nowrap overflow-ellipsis">
+                          <h1 className="text-highlight font-medium whitespace-nowrap text-xl overflow-ellipsis">
                             {!useAbbr
                               ? `${genus} ${species}`
                               : `${genus.charAt(0)}. ${species}`}
                           </h1>
                           <div className="flex flex-col">
-                            <span className="text-secondary text-sm font-medium mt-2">
+                            <span className="text-secondary text-base font-medium mt-2">
                               {desc}
                             </span>
-                            <span className="text-secondary text-sm font-medium mt-2">
+                            <span className="text-secondary text-base font-medium mt-2">
                               <strong className="text-secondary">{`$${price}`}</strong>
                             </span>
                             {extra && (
-                              <h1 className="text-xs text-red-400 font-medium mt-2">{`${extra}`}</h1>
+                              <h1 className="text-sm text-red-500 font-bold mt-2">{`${extra}`}</h1>
                             )}
                             {inStock && (
-                              <h1 className="text-xs text-blue-500 font-bold mt-2">
+                              <h1 className="text-sm text-blue-500 font-bold mt-2">
                                 In Stock!
                               </h1>
                             )}
@@ -144,26 +147,30 @@ export const FeaturedSalesList: FC = () => {
                     key={species + genus + imgUrl + i.toString() + desc}
                     className="flex flex-col gap-2"
                   >
-                    <div className="w-52 h-72 flex justify-center items-center bg-primary-light">
+                    <div className="w-72 h-72 flex justify-center items-center bg-primary-light">
                       <img className="w-full" src={imgUrl} alt="" />
                     </div>
-                    <h1 className="text-sm text-highlight font-medium">
+                    <h1 className="text-highlight font-medium whitespace-nowrap text-xl overflow-ellipsis">
                       {!useAbbr
                         ? `${genus} ${species}`
                         : `${genus.charAt(0)}. ${species}`}
                     </h1>
-                    <h1 className="text-xs text-secondary font-medium">
-                      {desc}
-                    </h1>
-                    <h1 className="text-xs text-secondary font-medium">{`$${price}`}</h1>
-                    {extra && (
-                      <h1 className="text-xs text-red-400 font-medium mt-2">{`${extra}`}</h1>
-                    )}
-                    {inStock && (
-                      <h1 className="text-xs text-blue-500 font-bold mt-2">
-                        In Stock!
-                      </h1>
-                    )}
+                    <div className="flex flex-col">
+                      <span className="text-secondary text-base font-medium mt-2">
+                        {desc}
+                      </span>
+                      <span className="text-secondary text-base font-medium mt-2">
+                        <strong className="text-secondary">{`$${price}`}</strong>
+                      </span>
+                      {extra && (
+                        <h1 className="text-sm text-red-500 font-bold mt-2">{`${extra}`}</h1>
+                      )}
+                      {inStock && (
+                        <h1 className="text-sm text-blue-500 font-bold mt-2">
+                          In Stock!
+                        </h1>
+                      )}
+                    </div>
                   </li>
                 )
               )}

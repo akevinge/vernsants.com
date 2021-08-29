@@ -3,7 +3,9 @@ type IconProps = {
   style?: import("react").CSSProperties;
 };
 
-type IconComponent = import("react").FC<IconProps>;
+type IconComponent = import("react").FC<
+  import("react").SVGProps<SVGSVGElement> & IconProps
+>;
 
 enum Routes {
   home = "/",
