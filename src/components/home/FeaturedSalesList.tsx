@@ -150,6 +150,7 @@ export const FeaturedSalesList: FC = () => {
                     <div className="w-72 h-72 flex justify-center items-center bg-primary-light">
                       <img className="w-full" src={imgUrl} alt="" />
                     </div>
+
                     <h1 className="text-highlight font-medium whitespace-nowrap text-xl overflow-ellipsis">
                       {!useAbbr
                         ? `${genus} ${species}`
