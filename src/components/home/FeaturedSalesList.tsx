@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay, Lazy } from "swiper/core";
 import "swiper/components/pagination/pagination.min.css";
@@ -8,23 +8,32 @@ import { listings } from "../../lib/listings";
 SwiperCore.use([Navigation, Autoplay, Lazy]);
 
 export const FeaturedSalesList: FC = () => {
-  const inStockListings = listings.filter(({ inStock }) => inStock === true);
-  const displaySlider = inStockListings.length > 4;
+  const [useAbbr, setUseAbbr] = useState(false);
+
+  const onResize = () => {
+    if (window.innerWidth < 700) {
+      setUseAbbr(true);
+    } else {
+      setUseAbbr(false);
+    }
+  };
+  useEffect(() => {
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   return (
-    <article
-      className={`w-full rounded-t-xl ${displaySlider && "h-116 sm:h-112"}`}
-    >
-      <div
-        className="relative px-10 pt-6 w-full flex flex-col gap-16"
-        style={{ height: "100%" }}
-      >
+    <article className="w-full rounded-t-xl">
+      <div className="relative px-10 pt-6 w-full flex flex-col gap-16">
         <h1 className="text-secondary font-medium text-3xl xl:text-4xl text-center">
           Check out <span className="text-highlight">Vern&apos;s</span> hottest
           sales
         </h1>
-        {displaySlider ? (
-          <div className="relative" style={{ height: "80%" }}>
+        {listings.length > 4 ? (
+          <div className="relative">
             <Swiper
+              autoHeight
               className="h-full"
               style={{ width: "90%" }}
               spaceBetween={50}
@@ -40,14 +49,14 @@ export const FeaturedSalesList: FC = () => {
                 0: {
                   slidesPerView: 1,
                 },
-                776: {
+                600: {
                   slidesPerView: 2,
                 },
                 1111: {
                   slidesPerView: 3,
                 },
                 1500: {
-                  slidesPerView: 5,
+                  slidesPerView: 4,
                 },
               }}
               navigation={{
@@ -60,33 +69,50 @@ export const FeaturedSalesList: FC = () => {
                 swiper.autoplay?.start();
               }}
             >
-              {inStockListings.map(
-                ({ species, genus, price, imgUrl, desc }, i) => (
-                  <SwiperSlide key={species + i}>
-                    <div
-                      className="w-50 max-h-full grid overflow-hidden gap-1"
-                      style={{ gridTemplateRows: "75% 25%" }}
-                    >
-                      <div className="w-52 h-72 flex justify-center items-center bg-primary-light">
-                        <img className="w-full" src={imgUrl} alt="" />
-                      </div>
-                      <div className="">
-                        <h1 className="text-highlight font-medium">
-                          {`${genus} ${species}`}
-                        </h1>
-                        <div className="flex flex-col">
-                          <span className="text-secondary text-sm font-medium mt-2">
-                            {desc}
-                          </span>
-                          <span className="text-secondary text-sm font-medium mt-2">
-                            <strong className="text-secondary">{`$${price}`}</strong>
-                          </span>
+              {listings
+                .sort((a, b) =>
+                  a.inStock && b.inStock ? 1 : a.inStock && !b.inStock ? -1 : 0
+                )
+                .map(
+                  (
+                    { species, genus, price, imgUrl, desc, extra, inStock },
+                    i
+                  ) => (
+                    <SwiperSlide key={species + i}>
+                      <div
+                        className="w-64 max-h-full grid overflow-hidden gap-3"
+                        style={{ gridTemplateRows: "70% 35%" }}
+                      >
+                        <div className="w-52 h-72 flex justify-center items-center bg-primary-light">
+                          <img className="w-full" src={imgUrl} alt="" />
+                        </div>
+                        <div className="">
+                          <h1 className="text-highlight font-medium whitespace-nowrap overflow-ellipsis">
+                            {!useAbbr
+                              ? `${genus} ${species}`
+                              : `${genus.charAt(0)}. ${species}`}
+                          </h1>
+                          <div className="flex flex-col">
+                            <span className="text-secondary text-sm font-medium mt-2">
+                              {desc}
+                            </span>
+                            <span className="text-secondary text-sm font-medium mt-2">
+                              <strong className="text-secondary">{`$${price}`}</strong>
+                            </span>
+                            {extra && (
+                              <h1 className="text-xs text-red-400 font-medium mt-2">{`${extra}`}</h1>
+                            )}
+                            {inStock && (
+                              <h1 className="text-xs text-blue-500 font-bold mt-2">
+                                In Stock!
+                              </h1>
+                            )}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </SwiperSlide>
-                )
-              )}
+                    </SwiperSlide>
+                  )
+                )}
             </Swiper>
             <button
               id="prev-test"
@@ -105,21 +131,42 @@ export const FeaturedSalesList: FC = () => {
           </div>
         ) : (
           <ul className="list-none flex gap-10 flex-wrap justify-center px-20">
-            {inStockListings.map(
-              ({ imgUrl, species, genus, price, desc }, i) => (
-                <li
-                  key={species + genus + imgUrl + i.toString() + desc}
-                  className="flex flex-col gap-2"
-                >
-                  <div className="w-52 h-72 flex justify-center items-center bg-primary-light">
-                    <img className="w-full" src={imgUrl} alt="" />
-                  </div>
-                  <h1 className="text-sm text-highlight font-medium">{`${genus} ${species}`}</h1>
-                  <h1 className="text-xs text-secondary font-medium">{desc}</h1>
-                  <h1 className="text-xs text-secondary font-medium">{`$${price}`}</h1>
-                </li>
+            {listings
+              .sort((a, b) =>
+                a.inStock && b.inStock ? 1 : a.inStock && !b.inStock ? -1 : 0
               )
-            )}
+              .map(
+                (
+                  { imgUrl, species, genus, price, desc, extra, inStock },
+                  i
+                ) => (
+                  <li
+                    key={species + genus + imgUrl + i.toString() + desc}
+                    className="flex flex-col gap-2"
+                  >
+                    <div className="w-52 h-72 flex justify-center items-center bg-primary-light">
+                      <img className="w-full" src={imgUrl} alt="" />
+                    </div>
+                    <h1 className="text-sm text-highlight font-medium">
+                      {!useAbbr
+                        ? `${genus} ${species}`
+                        : `${genus.charAt(0)}. ${species}`}
+                    </h1>
+                    <h1 className="text-xs text-secondary font-medium">
+                      {desc}
+                    </h1>
+                    <h1 className="text-xs text-secondary font-medium">{`$${price}`}</h1>
+                    {extra && (
+                      <h1 className="text-xs text-red-400 font-medium mt-2">{`${extra}`}</h1>
+                    )}
+                    {inStock && (
+                      <h1 className="text-xs text-blue-500 font-bold mt-2">
+                        In Stock!
+                      </h1>
+                    )}
+                  </li>
+                )
+              )}
           </ul>
         )}
       </div>
