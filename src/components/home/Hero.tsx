@@ -2,6 +2,7 @@ import { Button } from "@components/shared/Button";
 import { SpeciesList } from "@components/shared/SpeciesList";
 import { FC } from "react";
 import { Routes } from "../../types/Routes";
+import Link from "next/link";
 
 export const Hero: FC = () => {
   return (
@@ -14,18 +15,56 @@ export const Hero: FC = () => {
           Shop <span className="text-highlight">Vern&apos;s</span> Unique
           Collection of Ants
         </h1>
+
+        <div className="relative hidden lg:block">
+          <Button
+            bgColor="highlight"
+            link={Routes.shop}
+            customTwClass=""
+            style={{ width: "36vw", minWidth: "500px", overflow: "hidden" }}
+          >
+            <h1 className="text-primary font-medium lg:text-sm xl:text-base 2xl:text-lg">
+              Labor Day Sale! $30 for ANY Pogo Colony w/ Free Ice Packs
+            </h1>
+          </Button>
+          <Link href="/shop">
+            <img
+              className="cursor-pointer absolute -top-14 z-0 -right-14 w-20"
+              style={{ transform: "rotate(-25deg)" }}
+              src="/usa1.svg"
+              alt=""
+            />
+          </Link>
+        </div>
+        <div className="block lg:hidden">
+          <h1 className="text-highlight font-medium text-xs sm:text-sm xl:text-base 2xl:text-lg text-center">
+            Labor Day Sale! $30 for ANY Pogo Colony w/ Free Ice Packs
+          </h1>
+        </div>
+
         <div className="w-3/4 md:w-1/2 mx-auto">
           <SpeciesList />
         </div>
       </div>
       <div className="flex flex-col gap-8 items-center self-end mb-12 sm:mb-28">
-        <Button
-          bgColor="highlight"
-          link={Routes.shop}
-          customDim="w-32 sm:w-52 h-12"
-        >
-          <h1 className="text-primary font-medium text-lg">Shop Now</h1>
-        </Button>
+        <div className="relative">
+          <Button
+            bgColor="highlight"
+            link={Routes.shop}
+            customDim="w-32 sm:w-52 h-12"
+          >
+            <h1 className="text-primary font-medium text-lg">Shop Now</h1>
+          </Button>
+          <Link href="/shop">
+            <img
+              className="absolute -top-12 z-0 -right-12 w-20 cursor-pointer"
+              style={{ transform: "rotate(-25deg)" }}
+              src="/usa1.svg"
+              alt=""
+            />
+          </Link>
+        </div>
+
         <Button
           bgColor="secondary-light"
           link="#featured-sales"

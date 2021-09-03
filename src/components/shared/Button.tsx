@@ -19,7 +19,7 @@ const btnStyles = {
   hoverColor: {
     primary: "bg-highlight",
     secondary: "bg-highlight",
-    highlight: "bg-highlight-dark",
+    highlight: "bg-secondary",
     "secondary-light": "bg-gray-800",
   },
 };

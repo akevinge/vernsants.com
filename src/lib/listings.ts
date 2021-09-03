@@ -1,4 +1,4 @@
-export const listings: {
+type Listing = {
   species: string;
   genus: string;
   // all images are 210x280 px
@@ -8,7 +8,26 @@ export const listings: {
   // extra ex: Available Soon!
   extra?: string;
   inStock?: boolean;
-}[] = [
+  onSale?: number;
+};
+
+export const sortListings = (listings: Listing[]) => {
+  return listings.sort((a, b) =>
+    !a.onSale && !b.onSale
+      ? a.inStock && b.inStock
+        ? 1
+        : a.inStock && !b.inStock
+        ? -1
+        : 0
+      : a.onSale && b.onSale
+      ? b.onSale - a.onSale
+      : a.onSale
+      ? -1
+      : 1
+  );
+};
+
+export const listings: Listing[] = [
   {
     genus: "Myrmecocystus",
     species: "navajo",
@@ -60,4 +79,9 @@ export const listings: {
     desc: "1-10 workers",
     inStock: true,
   },
-];
+].map(({ genus, inStock, ...l }) => ({
+  inStock: genus === "Pogonomyrmex" ? false : inStock,
+  ...(genus === "Pogonomyrmex" && { onSale: 30 }),
+  genus,
+  ...l,
+}));

@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay, Lazy } from "swiper/core";
 import "swiper/components/pagination/pagination.min.css";
 import { ChevronRight } from "icons/ChevronRight";
-import { listings } from "../../lib/listings";
+import { listings, sortListings } from "../../lib/listings";
 
 SwiperCore.use([Navigation, Autoplay, Lazy]);
 
@@ -69,53 +69,72 @@ export const FeaturedSalesList: FC = () => {
                 swiper.autoplay?.start();
               }}
             >
-              {listings
-                .sort((a, b) =>
-                  a.inStock && b.inStock ? 1 : a.inStock && !b.inStock ? -1 : 0
-                )
-                .map(
-                  (
-                    { species, genus, price, imgUrl, desc, extra, inStock },
-                    i
-                  ) => (
-                    <SwiperSlide key={species + i}>
-                      <div
-                        className="w-64 max-h-full grid overflow-hidden gap-3"
-                        style={{
-                          gridTemplateRows: "70% 35%",
-                          height: "475px",
-                        }}
-                      >
-                        <div className="w-72 h-72 flex justify-center items-center bg-primary-light">
-                          <img className="w-full" src={imgUrl} alt="" />
-                        </div>
-                        <div className="">
-                          <h1 className="text-highlight font-medium whitespace-nowrap text-xl overflow-ellipsis">
-                            {!useAbbr
-                              ? `${genus} ${species}`
-                              : `${genus.charAt(0)}. ${species}`}
-                          </h1>
-                          <div className="flex flex-col">
-                            <span className="text-secondary text-base font-medium mt-2">
-                              {desc}
-                            </span>
-                            <span className="text-secondary text-base font-medium mt-2">
-                              <strong className="text-secondary">{`$${price}`}</strong>
-                            </span>
-                            {extra && (
-                              <h1 className="text-sm text-red-500 font-bold mt-2">{`${extra}`}</h1>
-                            )}
-                            {inStock && (
-                              <h1 className="text-sm text-blue-500 font-bold mt-2">
-                                In Stock!
-                              </h1>
+              {sortListings(listings).map(
+                (
+                  {
+                    species,
+                    genus,
+                    price,
+                    imgUrl,
+                    desc,
+                    extra,
+                    inStock,
+                    onSale,
+                  },
+                  i
+                ) => (
+                  <SwiperSlide key={species + i}>
+                    <div
+                      className="w-64 max-h-full grid overflow-hidden gap-3"
+                      style={{
+                        gridTemplateRows: "70% 35%",
+                        height: "475px",
+                      }}
+                    >
+                      <div className="w-72 h-72 flex justify-center items-center bg-primary-light">
+                        <img className="w-full" src={imgUrl} alt="" />
+                      </div>
+                      <div className="">
+                        <h1 className="text-highlight font-medium whitespace-nowrap text-xl overflow-ellipsis">
+                          {!useAbbr
+                            ? `${genus} ${species}`
+                            : `${genus.charAt(0)}. ${species}`}
+                        </h1>
+                        <div className="flex flex-col">
+                          <span className="text-secondary text-base font-medium mt-2">
+                            {desc}
+                          </span>
+                          <div className="flex gap-2">
+                            <h1
+                              className={`text-base text-secondary font-bold ${
+                                onSale && "line-through"
+                              }`}
+                            >{`$${price}`}</h1>
+
+                            {onSale && (
+                              <div className="relative">
+                                <h1 className="text-3xl text-white font-bold">{`$${onSale}`}</h1>
+                                <h1 className="text-sm whitespace-nowrap text-red-500 font-bold absolute top-0 -right-16">
+                                  ON SALE
+                                </h1>
+                              </div>
                             )}
                           </div>
+
+                          {extra && (
+                            <h1 className="text-sm text-red-500 font-bold mt-2">{`${extra}`}</h1>
+                          )}
+                          {inStock && (
+                            <h1 className="text-sm text-blue-500 font-bold mt-2">
+                              In Stock!
+                            </h1>
+                          )}
                         </div>
                       </div>
-                    </SwiperSlide>
-                  )
-                )}
+                    </div>
+                  </SwiperSlide>
+                )
+              )}
             </Swiper>
             <button
               id="prev-test"
