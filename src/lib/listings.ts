@@ -54,7 +54,7 @@ export const listings: {
   },
   {
     genus: "Pogonomyrmex",
-    species: "subnitidus",
+    species: "californicus",
     imgUrl: "https://i.imgur.com/lLHG9sh.jpg",
     price: 40,
     desc: "1-10 workers",

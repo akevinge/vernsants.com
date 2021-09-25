@@ -18,7 +18,7 @@ export const ShopListings: FC = () => {
               <div className="w-72 flex justify-center items-center bg-primary-light">
                 <img className="w-full" src={imgUrl} alt="" />
               </div>
-              <h1 className="text-xl text-highlight font-medium">{`${genus} ${species}`}</h1>
+              <h1 className="text-lg text-highlight font-medium">{`${genus} ${species}`}</h1>
               <h1 className="text-base text-secondary font-bold">{desc}</h1>
               <h1 className="text-base text-secondary font-bold">{`$${price}`}</h1>
               {extra && (
